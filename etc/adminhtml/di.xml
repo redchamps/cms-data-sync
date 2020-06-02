@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Cms\Block\Adminhtml\Page\Edit\SaveButton">
+        <plugin sortOrder="1" name="redChampsCmsDataSyncSaveButton"
+                type="RedChamps\CmsDataSync\Plugin\Cms\Page\SaveButton"/>
+    </type>
+    <type name="Magento\Cms\Block\Adminhtml\Block\Edit\SaveButton">
+        <plugin sortOrder="1" name="redChampsCmsDataSyncSaveButton"
+                type="RedChamps\CmsDataSync\Plugin\Cms\Block\SaveButton"/>
+    </type>
+    <type name="RedChamps\CmsDataSync\Model\ProcessorFactory">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="page" xsi:type="string">RedChamps\CmsDataSync\Model\Processors\Cms\Page</item>
+                <item name="block" xsi:type="string">RedChamps\CmsDataSync\Model\Processors\Cms\Block</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

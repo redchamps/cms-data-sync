@@ -1,0 +1,19 @@
+{
+    "name": "redchamps/module-cms-data-sync",
+    "description": "This extension will allow to SYNC CMS pages or blocks from one website to other.",
+    "require": {
+    },
+    "license": [
+        "Proprietary"
+    ],
+    "autoload": {
+        "psr-4": {
+            "RedChamps\\CmsDataSync\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    },
+    "type": "magento2-module",
+    "version": "1.0.0"
+}

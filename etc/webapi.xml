@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- Cms Page -->
+    <route url="/V1/cmsPage/byIdentifier/:identifier" method="GET">
+        <service class="RedChamps\CmsDataSync\Api\PageRepositoryInterface" method="getByIdentifier"/>
+        <resources>
+            <resource ref="Magento_Cms::page"/>
+        </resources>
+    </route>
+    <!-- Cms Block -->
+    <route url="/V1/cmsBlock/byIdentifier/:identifier" method="GET">
+        <service class="RedChamps\CmsDataSync\Api\BlockRepositoryInterface" method="getByIdentifier"/>
+        <resources>
+            <resource ref="Magento_Cms::block"/>
+        </resources>
+    </route>
+</routes>

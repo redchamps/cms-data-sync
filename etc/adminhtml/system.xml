@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="redchamps" translate="label" sortOrder="999998">
+            <label>RedChamps</label>
+        </tab>
+        <section id="cms_data_sync" translate="label" showInDefault="1" showInWebsite="1" showInStore="0">
+            <label>Cms Data Sync</label>
+            <tab>redchamps</tab>
+            <resource>RedChamps_CmsDataSync::config</resource>
+            <group id="connection" type="text" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0" translate="label">
+                <label>Connection</label>
+                <field id="site_name" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Website Name</label>
+                    <validate>required-entry</validate>
+                    <comment>Live/Staging/Local ..etc</comment>
+                </field>
+                <field id="site_url" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Website URL</label>
+                    <comment>For Example: http://magento.com/ (slash at the end of URL is required)</comment>
+                    <validate>validate-url required-entry</validate>
+                </field>
+                <field id="consumer_key" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Consumer Key</label>
+                    <validate>required-entry</validate>
+                    <comment>Enter Consumer Key of target website</comment>
+                </field>
+                <field id="consumer_secret" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Consumer Secret</label>
+                    <validate>required-entry</validate>
+                    <comment>Enter Consumer Secret of target website</comment>
+                </field>
+                <field id="access_token" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Access Token</label>
+                    <validate>required-entry</validate>
+                    <comment>Enter Access Token of target website</comment>
+                </field>
+                <field id="access_token_secret" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Access Token Secret</label>
+                    <validate>required-entry</validate>
+                    <comment>Enter Access Token Secret of target website</comment>
+                </field>
+                <field id="cms_data_sync_test_connect_wizard" translate="button_label" sortOrder="50" showInDefault="1" showInWebsite="0">
+                    <label/>
+                    <button_label>Test Connection</button_label>
+                    <frontend_model>RedChamps\CmsDataSync\Block\Adminhtml\System\Config\TestConnection</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
